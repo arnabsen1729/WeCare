@@ -47,20 +47,29 @@ sendHTMLMail = async (data) => {
     html = html.replace('{{pressure}}', data.pressure);
     html = html.replace('{{altitude}}', data.altitude);
     html = html.replace('{{weather}}', weatherData.weather[0].description);
-    const msg = {
-        to: data.email,
-        from: 'noreply.wecareu@gmail.com', // Change to your verified sender
-        subject: 'Collected Data from WeCare',
-        html: html,
-    };
-    sgMail
-        .send(msg)
-        .then(() => {
-            console.log('Email sent');
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+    // const msg = {
+    //     to: data.email,
+    //     from: 'noreply.wecareu@gmail.com', // Change to your verified sender
+    //     subject: 'Collected Data from WeCare',
+    //     html: html,
+    // };
+    data.email.forEach(element => {
+        const msg = {
+            to: element,
+            from: 'noreply.wecareu@gmail.com', // Change to your verified sender
+            subject: 'Collected Data from WeCare',
+            html: html,
+        }
+        sgMail
+            .send(msg)
+            .then(() => {
+                console.log('Email sent');
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    });
+
 };
 
 // const data = {
