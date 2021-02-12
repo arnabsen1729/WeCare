@@ -41,8 +41,6 @@ const deviceData = async (device) => {
                 humidity: device.humidity,
                 pressure: device.pressure,
                 altitude: device.altitude,
-                deviceUpdatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-                sentAt: 0,
             })
             .then((resp) => {
                 console.log('Device data added with ID: ', resp.id);
@@ -52,17 +50,17 @@ const deviceData = async (device) => {
             });
     } else {
         resp.forEach(async (document) => {
-            // db.collection('mlh-data')
-            //     .doc(document.id)
-            //     .update({
-            //         temperature: device.temperature,
-            //         humidity: device.humidity,
-            //         pressure: device.pressure,
-            //         altitude: device.altitude,
-            //     })
-            //     .then(() => {
-            //         console.log(document.data());
-            //     });
+            db.collection('mlh-data')
+                .doc(document.id)
+                .update({
+                    temperature: device.temperature,
+                    humidity: device.humidity,
+                    pressure: device.pressure,
+                    altitude: device.altitude,
+                })
+                .then(() => {
+                    console.log("Device data updated! ");
+                });
             if (document.data().hasOwnProperty('latitude')) {
                 let docVal = document.data();
                 let finalData = {
@@ -111,16 +109,16 @@ const userData = async (user) => {
             });
     } else {
         resp.forEach(async (document) => {
-            // db.collection('mlh-data')
-            //     .doc(document.id)
-            //     .update({
-            //         latitude: user.latitude,
-            //         longitude: user.longitude,
-            //         email: user.email,
-            //     })
-            //     .then(() => {
-            //         console.log(document.data());
-            //     });
+            db.collection('mlh-data')
+                .doc(document.id)
+                .update({
+                    latitude: user.latitude,
+                    longitude: user.longitude,
+                    email: user.email,
+                })
+                .then(() => {
+                    console.log("User data updated! ");
+                });
             if (document.data().hasOwnProperty('temperature')) {
                 let docVal = document.data();
                 let finalData = {
