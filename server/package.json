@@ -1,0 +1,22 @@
+{
+  "name": "wecare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev" : "nodemon server.js",
+    "start" : "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase": "^8.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
