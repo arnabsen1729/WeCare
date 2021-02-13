@@ -29,6 +29,8 @@
 ### Mobile Application view
 ![mobile](ss/mobile.png)
 
+Link to the APK: https://expo.io/artifacts/ca00e6ee-4380-4fcc-bdd7-de030db653ca
+
 ### Arduino
 ![ard](ss/arduino.jpeg)
 
