@@ -4,7 +4,7 @@ import requests
 
 ARD_PORT = "/dev/ttyUSB0"
 DEVICE_ID = 1234
-URL = "http://localhost:3000/device"
+URL = "https://wecare-hackthrob.herokuapp.com/device"
 
 si = serial.Serial(ARD_PORT,baudrate=9600,timeout=1)
 
