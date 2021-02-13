@@ -1,6 +1,7 @@
 ﻿
 <center><h1>WeCare</h1></center>
-![WeCare](https://socialify.git.ci/arnabsen1729/WeCare/image?description=1&descriptionEditable=Notification%20system%20that%20will%20inform%20you%20of%20the%20whereabouts%20of%20your%20loved%20ones.%20&font=Raleway&pattern=Circuit%20Board&stargazers=1&theme=Dark)
+
+<img src="https://socialify.git.ci/arnabsen1729/WeCare/image?description=1&descriptionEditable=Notification%20system%20that%20will%20inform%20you%20of%20the%20whereabouts%20of%20your%20loved%20ones.%20&font=Raleway&pattern=Circuit%20Board&stargazers=1&theme=Dark" >
 <hr>
 
 ## Built using
