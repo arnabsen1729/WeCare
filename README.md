@@ -5,6 +5,7 @@
 <hr>
 
 ## Built using
+
 - **Hardware**
 	- Arduino UNO
 	- Temperature and Humidity Sensor (DTH11)
@@ -13,11 +14,13 @@
 	- PySerial module to connect Arduino with Python program.
 - **Mobile App**
 	- React Native
+	- Expo SDK
+	- Expo Location API
 - **Server**
 	- Node and Express
 - **Services Used**
 	- Firebase Cloud Storage: to store the details of the user temporarily.
-	- Sengrid Mailing Service: to send the mails to the registered email addresses.
+	- Sendgrid Mailing Service: to send the mails to the registered email addresses.
 	- OpenWeatherMap API: to get the weather forecast.
 	- Mapbox API: to get the static map images.
 
@@ -67,7 +70,7 @@ And also displaying those values in an OLED display component.
 
 The Arduino is then connected to a **Python** program using **Pyserial** module to forward the collected information. The Python script then makes a **POST request** to the Node based server along with all the details. This process keeps repeating at a fixed interval.
 
-The other component is the mobile application, which is built using the **React Native framework.** The app is using the **Geolocation API** to get the coordinates of the userm, sends this data to the server periodically along with other information like email addresses and device id.
+The other component is the mobile application, which is built using the **React Native framework** and **Expo SDK**. The app is using the **Expo Location API** to get the coordinates of the userm, sends this data to the server periodically along with other information like email addresses and device id.
 
 The server is built with **Node Js** and **Express** and is deployed to **Heroku**. It receives the incoming information from the device and mobile app. We are using **Firebase Cloud Storage** to temporarily store the data. Both the device and the mobile application is bound by a unique Id, so that the server can recognize them. As soon as the ids match the server sends the emails to the registered addresses.
 
@@ -78,6 +81,8 @@ We are using the **Sendgrid mailing service** for that. In the email we have
 4.  A link to the exact location in the **Google Maps**.
 
 >Once the email is sent the record in the firebase gets deleted automatically.
+
+
 
 ## Challenges we ran into
 
@@ -107,9 +112,9 @@ We hope to expand the idea of WeCare in the following ways:-
 
 1.  Make the device independent by integrating something like Raspberry Pi that will communicate automatically with the server.
 2.  We can also add a GPS tracking sensor with the device itself that will track the Geo Coordinates of the user.
-3.  Have a user-end dashboard, to choose which data the user wants to send. This will addd more flexibility to the application.
+3.  Have a user-end dashboard, to choose which data the user wants to send. This will add more flexibility to the application.
 4.  Improve the security of the APIs and device by implementing point-to-point encryption.
-5.  Devise a ML model to predict future information about weather from present and historical data.
+5.  Devise an ML model to predict future information about weather from present and historical data.
 
 ## Team: WeCare
 
